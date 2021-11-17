@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Edvora_Swift/Pods-Edvora_Swift-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework
+${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework

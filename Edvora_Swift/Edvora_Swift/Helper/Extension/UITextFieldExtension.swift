@@ -36,7 +36,8 @@ extension UITextField {
     }
     
     static let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    static let alphanumericRegex = "^(?=.*\\d)(?=.*\\D)([a-zA-Z0-9]{8,15})$"
+    static let usernameRegex = "[a-z]+[0-9]*[_.-]?[a-z0-9]"
+    static let passwordRegex = "^(?=.*\\d)(?=.*\\D)([a-zA-Z0-9]{8})$"
     
     public func addLeftTextPadding(_ blankSize: CGFloat) {
         let leftView = UIView()
@@ -57,8 +58,13 @@ extension UITextField {
     }
     
     func validateEmail() -> Bool {
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", UITextField.emailRegex)
-        return emailTest.evaluate(with: self.text)
+        let email = NSPredicate(format:"SELF MATCHES %@", UITextField.emailRegex)
+        return email.evaluate(with: self.text)
+    }
+    
+    func validateUsername() -> Bool {
+        let username = NSPredicate(format:"SELF MATCHES %@", UITextField.usernameRegex)
+        return username.evaluate(with: self.text)
     }
     
     func validateDigits() -> Bool {
@@ -67,9 +73,9 @@ extension UITextField {
         return digitsTest.evaluate(with: self.text)
     }
     
-    func validateAlphaNumeric() -> Bool {
-        let alphaNumeric = NSPredicate(format:"SELF MATCHES %@", UITextField.alphanumericRegex)
-        return alphaNumeric.evaluate(with: self.text)
+    func validatePassword() -> Bool {
+        let password = NSPredicate(format:"SELF MATCHES %@", UITextField.passwordRegex)
+        return password.evaluate(with: self.text)
     }
     
     public var isEmpty: Bool {
@@ -87,6 +93,13 @@ extension UITextField {
         return false
     }
     
+    func checkLength(withMinLimit minLen: Int) -> Bool {
+        if (self.text!.count ) >= minLen {
+            return true
+        }
+        return false
+    }
+    
     func checkLength(withMaxLimit maxLen: Int) -> Bool {
         if (self.text!.count ) == maxLen {
             return true
@@ -94,7 +107,7 @@ extension UITextField {
         return false
     }
     
-    enum Direction{
+    enum Direction {
         case Left
         case Right
     }

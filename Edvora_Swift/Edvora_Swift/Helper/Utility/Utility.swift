@@ -373,6 +373,11 @@ func clearGlobalVariables() {
     
 }
 
+//MARK: - Hide IQKeyboard Method
+func hideIQKeyboard() {
+    IQKeyboardManager.shared.resignFirstResponder()
+}
+
 //MARK: - String to Image Method
 func stringToImage(strImage : String?) -> UIImage? {
     if strImage != "" {

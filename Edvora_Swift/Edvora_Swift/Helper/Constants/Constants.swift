@@ -5,8 +5,10 @@
 extension UIColor {
     
     class func app733D47() -> UIColor { return UIColor(named: "App733D47")! }
+    class func appB0B0B0() -> UIColor { return UIColor(named: "AppB0B0B0")! }
     class func appBF9B9B() -> UIColor { return UIColor(named: "AppBF9B9B")! }
     class func appBlack() -> UIColor { return UIColor(named: "AppBlack")! }
+    class func appBorder() -> UIColor { return UIColor(named: "AppBorder")! }
     class func appGray() -> UIColor { return UIColor(named: "AppGray")! }
     class func appTextBg() -> UIColor { return UIColor(named: "AppTextBg")! }
     class func appWhite() -> UIColor { return UIColor(named: "AppWhite")! }
@@ -65,15 +67,16 @@ enum AlertMessage {
     static let msgLastName = "Please enter last name"
     static let msgValidLastName = "Last name must contain atleast 1 characters and maximum 30 characters"
     
-    static let msgName = "Please enter name"
-    static let msgValidName = "Name must contain atleast 2 characters and maximum 60 characters"
+    static let msgUsername = "Please enter username"
+    static let msgUsernameCharacter = "Username must contain atleast 2 characters"
+    static let msgValidUsername = "Username should contain atleast one lowercase letter and one digit"
     
     static let msgEmail = "Please enter email address"
     static let msgValidEmail = "Please enter valid email address"
     
     static let msgPassword = "Please enter password"
-    static let msgPasswordCharacter = "Password must contain atleast 8 characters and maximum 16 characters"
-    static let msgValidPassword = "Password should contain atleast one uppercase letter, one lowercase letter, one digit and one special character with minimum eight character length"
+    static let msgPasswordCharacter = "Password must contain 8 characters"
+    static let msgValidPassword = "Password should contain atleast one uppercase letter, one lowercase letter, one digit with minimum eight character length"
     
     static let msgConfPassword = "Please enter confirm password"
     static let msgConfPasswordCharacter = "Confirm password must contain atleast 8 characters and maximum 16 characters"
